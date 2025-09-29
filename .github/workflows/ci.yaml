@@ -1,0 +1,40 @@
+name: Homebrew CI
+on:
+  push: &paths
+    paths:
+    - .github/workflows/*.y*ml
+    - Casks/*.rb
+    - Formula/*.rb
+    - cmd/*.rb
+
+  pull_request: *paths
+
+jobs:
+  CI:
+    runs-on: ${{ matrix.os }}-${{ matrix.version }}-${{ matrix.arch }}
+    matrix:
+      os: [macos, ubuntu]
+      version: [14, 15]
+      arch: [large, xlarge]
+
+    env:
+      ACTIONS_STEP_DEBUG: ${{ vars.ACTIONS_STEP_DEBUG }}
+      HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+    - name: Set up Homebrew
+      id: set-up-homebrew
+      uses: Homebrew/actions/setup-homebrew@main
+
+    - name: Install Homebrew Bundler RubyGems
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: brew install-bundler-gems
+
+    - run: echo ${GITHUB_REPOSITORY/homebrew-/}
+
+    - name: Tap ${{ github.repository_owner }}/${{ github.event.repository.name }}
+      run: brew tap ${GITHUB_REPOSITORY/homebrew-/}
+
+
+
+    
