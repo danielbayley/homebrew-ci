@@ -12,10 +12,11 @@ on:
 jobs:
   CI:
     runs-on: ${{ matrix.os }}-${{ matrix.version }}-${{ matrix.arch }}
-    matrix:
-      os: [macos, ubuntu]
-      version: [14, 15]
-      arch: [large, xlarge]
+    strategy:
+      matrix:
+        os: [macos, ubuntu]
+        version: [14, 15]
+        arch: [large, xlarge]
 
     env:
       ACTIONS_STEP_DEBUG: ${{ vars.ACTIONS_STEP_DEBUG }}
