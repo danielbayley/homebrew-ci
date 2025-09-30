@@ -1,11 +1,11 @@
-  name: Homebrew CI
+name: Homebrew CI
 on:
   push: &paths
     paths:
     - .github/workflows/*.y*ml
     - Casks/*.rb
     - Formula/*.rb
-    - cmd/*.rb
+    - cmd/**.rb
 
   pull_request: *paths
 
