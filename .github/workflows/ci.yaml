@@ -1,4 +1,4 @@
-name: Homebrew CI
+  name: Homebrew CI
 on:
   push: &paths
     paths:
