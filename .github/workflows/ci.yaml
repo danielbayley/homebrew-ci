@@ -15,13 +15,13 @@ jobs:
     strategy:
       matrix:
         include:
-        - name: Sonoma (ARM)
+        - name: Sonoma
           runner: macos-14
-        - name: Sequoia (ARM)
+        - name: Sequoia
           runner: macos-15
-        - name: Sequoia (x86)
+        - name: Sequoia
           runner: macos-15-intel
-        - name: Tahoe (ARM)
+        - name: Tahoe
           runner: macos-26
         - name: Linux
           runner: ubuntu-22.04 #-latest
