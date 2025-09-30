@@ -12,25 +12,24 @@ on:
 
 jobs:
   CI:
-    runs-on: ${{ matrix.runner }}
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         include:
         - name: Ventura
-          runner: macos-13
+          os: macos-13
         - name: Sonoma
-          runner: macos-14
+          os: macos-14
         - name: Sequoia
-          runner: macos-15
+          os: macos-15
         - name: Sequoia
-          runner: macos-15-intel
+          os: macos-15-intel
         - name: Tahoe
-          runner: macos-26
+          os: macos-26
         - name: Linux
-          runner: ubuntu-22.04
+          os: ubuntu-22.04
         - name: Linux
-          runner: ubuntu-24.04
-
+          os: ubuntu-24.04
     env:
       ACTIONS_STEP_DEBUG: ${{ vars.ACTIONS_STEP_DEBUG }}
       HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
