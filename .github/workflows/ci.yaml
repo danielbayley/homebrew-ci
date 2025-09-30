@@ -11,12 +11,14 @@ on:
 
 jobs:
   CI:
-    runs-on: ${{ matrix.runner || join('macos-', matrix.version) }}
+    runs-on: ${{ matrix.runner }}
     strategy:
       matrix:
-        version: [14, 15, 26]
         include:
+        - runner: macos-14
+        - runner: macos-15
         - runner: macos-15-intel
+        - runner: macos-26
         - runner: ubuntu-latest
 
     env:
