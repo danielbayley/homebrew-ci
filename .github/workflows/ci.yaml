@@ -43,10 +43,10 @@ jobs:
       if: steps.cache.outputs.cache-hit != 'true'
       run: brew install-bundler-gems
 
-    - run: echo ${GITHUB_REPOSITORY/homebrew-/}
+    - run: echo ${GITHUB_REPOSITORY/homebrew-}
 
     - name: Tap ${{ github.repository_owner }}/${{ github.event.repository.name }}
-      run: brew tap ${GITHUB_REPOSITORY/homebrew-/}
+      run: brew tap ${GITHUB_REPOSITORY/homebrew-}
 
 
 
