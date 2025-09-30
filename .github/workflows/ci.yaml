@@ -22,7 +22,7 @@ jobs:
           arch: '-intel'
         #- runner: macos-26 # Tahoe
         - os: ubuntu
-          version: '-latest'
+          version: latest
 
     env:
       ACTIONS_STEP_DEBUG: ${{ vars.ACTIONS_STEP_DEBUG }}
