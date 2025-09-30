@@ -10,7 +10,8 @@ on:
   pull_request: *paths
 
 jobs:
-  ${{ github.repository }}:
+  CI:
+    run-name: ${{ github.actor }}
     runs-on: ${{ matrix.runner }}
     strategy:
       matrix:
