@@ -16,7 +16,7 @@ jobs:
       matrix:
         include:
         - runner: macos-14 # Sonoma
-        - runner: macos-15-arm64 # Sequoia
+        - runner: macos-15-arm # Sequoia
         - runner: macos-15-intel
         - runner: macos-26 # Tahoe
         - runner: ubuntu-latest
