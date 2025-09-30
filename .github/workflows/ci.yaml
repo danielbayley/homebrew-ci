@@ -15,18 +15,18 @@ jobs:
     strategy:
       matrix:
         include:
-        - runner: macos-14 # Sonoma
-          name: macOS 14 Sonoma (ARM)
-        - runner: macos-15 # Sequoia
-          name: macOS 15 Sequoia (ARM)
-        - runner: macos-15-intel
-          name: macOS 15 Sequoia (x86)
-        - runner: macos-26 # Tahoe
-          name: macOS 26 Tahoe (ARM)
-        - runner: ubuntu-22.04 #-latest
-          name: Linux Ubuntu 22
-        - runner: ubuntu-24.04
-          name: Linux Ubuntu 24
+        - name: Sonoma (ARM)
+          runner: macos-14
+        - name: Sequoia (ARM)
+          runner: macos-15
+        - name: Sequoia (x86)
+          runner: macos-15-intel
+        - name: Tahoe (ARM)
+          runner: macos-26
+        - name: Linux
+          runner: ubuntu-22.04 #-latest
+        - name: Linux
+          runner: ubuntu-24.04
 
     env:
       ACTIONS_STEP_DEBUG: ${{ vars.ACTIONS_STEP_DEBUG }}
