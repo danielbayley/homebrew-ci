@@ -34,8 +34,6 @@ jobs:
         - name: Linux
           runner: ubuntu-22.04
         - name: Linux
-          runner: ubuntu-22.04-arm
-        - name: Linux
           runner: ubuntu-24.04
         - name: Linux
           runner: ubuntu-24.04-arm
