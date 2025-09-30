@@ -16,10 +16,17 @@ jobs:
       matrix:
         include:
         - runner: macos-14 # Sonoma
-        - runner: macos-15-arm # Sequoia
+          name: macOS 14 Sonoma (ARM)
+        - runner: macos-15 # Sequoia
+          name: macOS 15 Sequoia (ARM)
         - runner: macos-15-intel
+          name: macOS 15 Sequoia (x86)
         - runner: macos-26 # Tahoe
-        - runner: ubuntu-latest
+          name: macOS 26 Tahoe (ARM)
+        - runner: ubuntu-22.04 #-latest
+          name: Linux Ubuntu 22
+        - runner: ubuntu-24.04
+          name: Linux Ubuntu 24
 
     env:
       ACTIONS_STEP_DEBUG: ${{ vars.ACTIONS_STEP_DEBUG }}
