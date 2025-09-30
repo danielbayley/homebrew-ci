@@ -1,5 +1,6 @@
 name: Homebrew CI
 on:
+  workflow_dispatch:
   push: &paths
     paths:
     - .github/workflows/*.y*ml
