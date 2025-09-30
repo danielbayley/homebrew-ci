@@ -11,7 +11,7 @@ on:
 
 jobs:
   CI:
-    runs-on: macos-${{ matrix.version }}${{ matrix.arch }}
+    runs-on: ${{ matrix.os || 'macos' }}-${{ matrix.version }}${{ matrix.arch }}
     strategy:
       matrix:
         version: [14, 15, 26]
@@ -21,7 +21,8 @@ jobs:
         - version: 15
           arch: '-intel'
         #- runner: macos-26 # Tahoe
-        - runner: ubuntu-latest
+        - os: ubuntu
+          version: '-latest'
 
     env:
       ACTIONS_STEP_DEBUG: ${{ vars.ACTIONS_STEP_DEBUG }}
