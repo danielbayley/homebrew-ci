@@ -1,5 +1,5 @@
 #name: Homebrew CI
-run-name: Homebrew ${{ github.job_name }}
+run-name: Homebrew ${{ github.job }}
 on:
   workflow_dispatch:
   pull_request: &paths
