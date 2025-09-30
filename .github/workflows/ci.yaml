@@ -11,7 +11,7 @@ on:
 
 jobs:
   CI:
-    runs-on: ${{ matrix.runner || 'macos-latest' }}
+    runs-on: ${{ matrix.runner || join('macos-', matrix.version, '' }}
     strategy:
       matrix:
         version: [14, 15, 26]
