@@ -15,6 +15,14 @@ jobs:
     strategy:
       matrix:
         include:
+        - name: Catalina
+          runner: macos-10.5
+        - name: Big Sur
+          runner: macos-11
+        - name: Monterey
+          runner: macos-12
+        - name: Ventura
+          runner: macos-13
         - name: Sonoma
           runner: macos-14
         - name: Sequoia
@@ -24,9 +32,13 @@ jobs:
         - name: Tahoe
           runner: macos-26
         - name: Linux
-          runner: ubuntu-22.04 #-latest
+          runner: ubuntu-22.04
+        - name: Linux
+          runner: ubuntu-22.04-arm
         - name: Linux
           runner: ubuntu-24.04
+        - name: Linux
+          runner: ubuntu-24.04-arm
 
     env:
       ACTIONS_STEP_DEBUG: ${{ vars.ACTIONS_STEP_DEBUG }}
