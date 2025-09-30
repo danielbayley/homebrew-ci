@@ -15,12 +15,6 @@ jobs:
     strategy:
       matrix:
         include:
-        - name: Catalina
-          runner: macos-10.5
-        - name: Big Sur
-          runner: macos-11
-        - name: Monterey
-          runner: macos-12
         - name: Ventura
           runner: macos-13
         - name: Sonoma
