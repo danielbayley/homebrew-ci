@@ -1,5 +1,5 @@
 #name: Homebrew CI
-run-name: Homebrew ${{ github.event_name }}
+run-name: Homebrew ${{ github.event.inputs.name }}
 on:
   workflow_dispatch:
   push: &paths
