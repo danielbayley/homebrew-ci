@@ -1,5 +1,5 @@
 #name: Homebrew CI
-run-name: ${{ github.event.repository.name }}
+run-name: Homebrew CI (${{ github.event.repository.name }})
 on:
   workflow_dispatch:
   push: &paths
@@ -43,8 +43,6 @@ jobs:
     - name: Install Homebrew Bundler RubyGems
       if: steps.cache.outputs.cache-hit != 'true'
       run: brew install-bundler-gems
-
-    - run: echo ${GITHUB_REPOSITORY/homebrew-}
 
     - name: Tap ${{ github.repository_owner }}/${{ github.event.repository.name }}
       run: brew tap ${GITHUB_REPOSITORY/homebrew-}
