@@ -1,15 +1,15 @@
 #name: Homebrew CI
-run-name: Homebrew ${{ github.event.inputs.name }}
+run-name: Homebrew ${{ github.job_name }}
 on:
   workflow_dispatch:
-  push: &paths
+  pull_request: &paths
     paths:
     - .github/workflows/*.y*ml
     - Casks/*.rb
     - Formula/*.rb
     - cmd/**.rb
 
-  pull_request: *paths
+  push: *paths
 
 jobs:
   CI:
